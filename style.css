@@ -1,0 +1,132 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* App Container Layout */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #1e293b;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #38bdf8;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li a.active, .sidebar ul li a:hover {
+    background-color: #334155;
+    color: #fff;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #64748b;
+}
+
+/* Bookshelf Grid */
+.bookshelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Book Cards */
+.book-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+}
+
+.book-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.book-card p {
+    font-size: 14px;
+    color: #10b981; /* Green for reading/completed status */
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Add Book Card Styling */
+.add-book {
+    border: 2px dashed #cbd5e1;
+    background-color: transparent;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add-book h3 {
+    font-size: 36px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.add-book p {
+    color: #94a3b8;
+    margin: 0;
+}
