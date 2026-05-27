@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent; /* Removes ugly mobile tap flash */
 }
 
 body {
@@ -111,12 +112,7 @@ header p {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.dept-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .card-header {
@@ -173,30 +169,37 @@ header p {
     font-size: 14px;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.2s;
-}
-
-.btn-primary:hover {
-    background-color: #1e293b;
+    transition: background-color 0.1s, transform 0.1s;
 }
 
 .room-link {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: #2563eb;
     text-decoration: none;
     padding: 6px 0;
     display: inline-flex;
     align-items: center;
-    transition: color 0.2s;
+    transition: color 0.1s;
 }
 
-.room-link:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
-}
-
-/* Accent borders per track to add elegance */
+/* Accent borders per track */
 .science-card { border-top: 4px solid #06b6d4; }
 .art-card { border-top: 4px solid #ec4899; }
 .commercial-card { border-top: 4px solid #f59e0b; }
+
+/* INSTANT MOBILE CLICK REACTIONS */
+.btn-primary:active {
+    background-color: #38bdf8 !important;
+    transform: scale(0.96); /* Visual physical click press */
+}
+
+.room-link:active {
+    color: #0284c7 !important;
+    text-decoration: underline;
+}
+
+.dept-card:active {
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
