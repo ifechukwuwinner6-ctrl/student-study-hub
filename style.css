@@ -1,12 +1,12 @@
-/* Core Mobile Viewport Defenses */
+/* Core Viewport Scaling Protections */
 html, body {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Blocks all horizontal side-scrolling */
+    overflow-x: hidden;
     position: relative;
-    touch-action: pan-y; /* Only permits up and down scrolling, locks out pinch gestures */
+    touch-action: pan-y; /* Allows scrolling down, completely blocks pinch-zooming */
     -webkit-text-size-adjust: 100%;
     background-color: #f8fafc;
     color: #1e293b;
@@ -16,11 +16,10 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Master Mobile Layout Setup */
 .app-container {
     display: flex;
     flex-direction: column;
@@ -28,7 +27,7 @@ html, body {
     min-height: 100vh;
 }
 
-/* Slick Top Navigation Bar instead of an awkward side-shelf on mobile */
+/* Fixed Header Navbar */
 .mobile-top-bar {
     width: 100%;
     background-color: #0f172a;
@@ -46,7 +45,6 @@ html, body {
 .mobile-top-bar h2 {
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: -0.5px;
 }
 
 .badge {
@@ -58,11 +56,10 @@ html, body {
     border-radius: 4px;
 }
 
-/* Compact Content Workspace */
+/* Content Area */
 .main-content {
     flex: 1;
     width: 100%;
-    max-width: 100%;
     padding: 20px 16px;
 }
 
@@ -73,17 +70,16 @@ html, body {
 .welcome-header h1 {
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 6px;
     color: #0f172a;
+    margin-bottom: 6px;
 }
 
 .welcome-header p {
     color: #64748b;
     font-size: 14px;
-    line-height: 1.4;
 }
 
-/* Clean Single-Column Grid */
+/* Layout Grid */
 .departments-grid {
     display: flex;
     flex-direction: column;
@@ -91,7 +87,7 @@ html, body {
     width: 100%;
 }
 
-/* Mobile Optimized Cards */
+/* Department App Cards */
 .dept-card {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
@@ -117,7 +113,6 @@ html, body {
 .card-header h3 {
     font-size: 18px;
     font-weight: 600;
-    color: #0f172a;
 }
 
 .desc {
@@ -138,7 +133,7 @@ html, body {
     margin-bottom: 18px;
 }
 
-/* Control Elements */
+/* Action Center */
 .action-hub {
     display: flex;
     flex-direction: column;
@@ -156,30 +151,33 @@ html, body {
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    text-align: center;
 }
 
-.room-link {
+.room-link-btn {
+    background: none;
+    border: none;
     font-size: 13px;
     font-weight: 500;
     color: #2563eb;
-    text-decoration: none;
-    padding: 4px 0;
+    padding: 6px 0;
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
+    text-align: left;
 }
 
-/* Solid Top Borders */
+/* Accent Borders */
 .science-card { border-top: 4px solid #06b6d4; }
 .art-card { border-top: 4px solid #ec4899; }
 .commercial-card { border-top: 4px solid #f59e0b; }
 
-/* Physical Press Mechanics */
+/* Mobile Tap Animations */
 .btn-primary:active {
     background-color: #38bdf8 !important;
     transform: scale(0.97);
 }
 
-.room-link:active {
-    color: #0284c7 !important;
+.room-link-btn:active {
+    color: #0284c7;
 }
+ 
