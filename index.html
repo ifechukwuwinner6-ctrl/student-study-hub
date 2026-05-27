@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Student Study Hub</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Student Study Hub Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
     <div class="app-container">
         <header class="mobile-top-bar">
             <h2>StudyHub Pro</h2>
-            <span class="badge">Portal</span>
+            <span class="badge">Python Powered</span>
         </header>
 
         <main class="main-content">
@@ -21,49 +21,21 @@
             </div>
 
             <section class="departments-grid">
-                
-                <div class="dept-card science-card">
+                {% for id, dept in departments.items() %}
+                <div class="dept-card {{ id }}-card">
                     <div class="card-header">
-                        <span class="icon">🔬</span>
-                        <h3>Science Department</h3>
+                        <span class="icon">{{ dept.icon }}</span>
+                        <h3>{{ dept.name }}</h3>
                     </div>
-                    <p class="desc">Access Physics, Chemistry, Biology texts, and custom engineering blueprints.</p>
-                    <div class="meta-info">📚 14 Active Books</div>
+                    <p class="desc">{{ dept.description }}</p>
+                    <div class="meta-info">📚 {{ dept.books_count }} Active Books</div>
                     <div class="action-hub">
-                        <button class="btn btn-primary">Enter Library</button>
-                        <a href="#" class="room-link">🎯 Practice Quiz Room</a>
-                        <a href="#" class="room-link">💬 Science Lounge Chat</a>
+                        <button class="btn btn-primary" onclick="alert('Opening {{ dept.name }} Library...')">Enter Library</button>
+                        <button class="room-link-btn" onclick="alert('Loading {{ dept.name }} Quiz...')">🎯 Practice Quiz Room</button>
+                        <button class="room-link-btn" onclick="alert('Connecting to {{ dept.name }} Chat...')">💬 {{ dept.name }} Chat</button>
                     </div>
                 </div>
-
-                <div class="dept-card art-card">
-                    <div class="card-header">
-                        <span class="icon">🎨</span>
-                        <h3>Art Department</h3>
-                    </div>
-                    <p class="desc">Access Literature, History, Government readings, and creative writing archives.</p>
-                    <div class="meta-info">📚 12 Active Books</div>
-                    <div class="action-hub">
-                        <button class="btn btn-primary">Enter Library</button>
-                        <a href="#" class="room-link">🎯 Practice Quiz Room</a>
-                        <a href="#" class="room-link">💬 Art Lounge Chat</a>
-                    </div>
-                </div>
-
-                <div class="dept-card commercial-card">
-                    <div class="card-header">
-                        <span class="icon">📊</span>
-                        <h3>Commercial Department</h3>
-                    </div>
-                    <p class="desc">Access Financial Accounting, Commerce, Economics manuals, and business models.</p>
-                    <div class="meta-info">📚 15 Active Books</div>
-                    <div class="action-hub">
-                        <button class="btn btn-primary">Enter Library</button>
-                        <a href="#" class="room-link">🎯 Practice Quiz Room</a>
-                        <a href="#" class="room-link">💬 Commerce Lounge Chat</a>
-                    </div>
-                </div>
-
+                {% endfor %}
             </section>
         </main>
     </div>
