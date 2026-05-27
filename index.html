@@ -10,39 +10,68 @@
 
     <div class="app-container">
         <aside class="sidebar">
-            <h2>StudyHub</h2>
+            <div class="logo-area">
+                <h2>StudyHub Pro</h2>
+                <span class="badge">Academic Portal</span>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">📚 My Reading Room</a></li>
-                    <li><a href="#">💬 Study Chat</a></li>
-                    <li><a href="#">⚙️ Settings</a></li>
+                    <li><a href="#" class="active">🏛️ Main Campus</a></li>
+                    <li><a href="#">⚙️ Profile Settings</a></li>
                 </ul>
             </nav>
         </aside>
 
         <main class="main-content">
             <header>
-                <h1>Welcome back, Student!</h1>
-                <p>Your private digital bookshelf</p>
+                <h1>Welcome back, Academic Scholar!</h1>
+                <p>Select your department track below to access your custom reading vault and active study portals.</p>
             </header>
 
-            <section class="bookshelf">
-                <div class="book-card">
-                    <h3>Python Programming 101</h3>
-                    <p class="status">Status: Reading</p>
-                    <button class="btn">Open Book</button>
+            <section class="departments-grid">
+                
+                <div class="dept-card science-card">
+                    <div class="card-header">
+                        <span class="icon">🔬</span>
+                        <h3>Science Department</h3>
+                    </div>
+                    <p class="desc">Access Physics, Chemistry, Biology texts, and custom engineering blueprints.</p>
+                    <div class="meta-info">📚 14 Active Books</div>
+                    <div class="action-hub">
+                        <button class="btn btn-primary">Enter Library</button>
+                        <a href="#" class="room-link">🎯 Practice Quiz Room</a>
+                        <a href="#" class="room-link">💬 Science Lounge Chat</a>
+                    </div>
                 </div>
 
-                <div class="book-card">
-                    <h3>Web Development Basics</h3>
-                    <p class="status">Status: Completed</p>
-                    <button class="btn">Open Book</button>
+                <div class="dept-card art-card">
+                    <div class="card-header">
+                        <span class="icon">🎨</span>
+                        <h3>Art Department</h3>
+                    </div>
+                    <p class="desc">Access Literature, History, Government readings, and creative writing archives.</p>
+                    <div class="meta-info">📚 12 Active Books</div>
+                    <div class="action-hub">
+                        <button class="btn btn-primary">Enter Library</button>
+                        <a href="#" class="room-link">🎯 Practice Quiz Room</a>
+                        <a href="#" class="room-link">💬 Art Lounge Chat</a>
+                    </div>
                 </div>
 
-                <div class="book-card add-book">
-                    <h3>+</h3>
-                    <p>Add New Book</p>
+                <div class="dept-card commercial-card">
+                    <div class="card-header">
+                        <span class="icon">📊</span>
+                        <h3>Commercial Department</h3>
+                    </div>
+                    <p class="desc">Access Financial Accounting, Commerce, Economics manuals, and business models.</p>
+                    <div class="meta-info">📚 15 Active Books</div>
+                    <div class="action-hub">
+                        <button class="btn btn-primary">Enter Library</button>
+                        <a href="#" class="room-link">🎯 Practice Quiz Room</a>
+                        <a href="#" class="room-link">💬 Commerce Lounge Chat</a>
+                    </div>
                 </div>
+
             </section>
         </main>
     </div>
