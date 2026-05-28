@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Art Library</title>
+    <title>Faculty of Arts Vault</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
         <header class="app-header header-pink">
-            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Hub</a>
-            <h1>Art Vault</h1>
+            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Main Portal</a>
+            <h1>Arts & Law Vault</h1>
         </header>
-        <main class="main-content">
-            <div class="book-item">
-                <h4><i class="fas fa-book-open"></i> Literature in English</h4>
-                <p>Drama analysis, prose explanations, and anthologies.</p>
-                <button class="download-button" onclick="alert('Downloading Literature PDF...')">Download</button>
+        <main class="main-content" style="padding-top: 20px;">
+            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #ec4899;">
+                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-gavel" style="color: #ec4899;"></i> LAW 101: Legal Systems</h4>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Sources of law, judicial precedents, and constitutional foundations.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #ec4899; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
             </div>
-            <div class="book-item">
-                <h4><i class="fas fa-landmark"></i> History of West Africa</h4>
-                <p>Pre-colonial eras, independence movements, and timelines.</p>
-                <button class="download-button" onclick="alert('Downloading History PDF...')">Download</button>
-            </div>
-            <div class="book-item">
-                <h4><i class="fas fa-gavel"></i> Government Essentials</h4>
-                <p>Constitutions, types of states, and political systems.</p>
-                <button class="download-button" onclick="alert('Downloading Government PDF...')">Download</button>
+
+            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #ec4899;">
+                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-globe-africa" style="color: #ec4899;"></i> HIS 211: Modern African History</h4>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Decolonization and socioeconomic developments across the continent.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #ec4899; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
             </div>
         </main>
     </div>
