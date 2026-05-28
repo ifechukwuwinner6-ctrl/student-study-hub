@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Art Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header header-pink">
+            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Hub</a>
+            <h1>Art Vault</h1>
+        </header>
+        <main class="main-content">
+            <div class="book-item">
+                <h4><i class="fas fa-book-open"></i> Literature in English</h4>
+                <p>Drama analysis, prose explanations, and anthologies.</p>
+                <button class="download-button" onclick="alert('Downloading Literature PDF...')">Download</button>
+            </div>
+            <div class="book-item">
+                <h4><i class="fas fa-landmark"></i> History of West Africa</h4>
+                <p>Pre-colonial eras, independence movements, and timelines.</p>
+                <button class="download-button" onclick="alert('Downloading History PDF...')">Download</button>
+            </div>
+            <div class="book-item">
+                <h4><i class="fas fa-gavel"></i> Government Essentials</h4>
+                <p>Constitutions, types of states, and political systems.</p>
+                <button class="download-button" onclick="alert('Downloading Government PDF...')">Download</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
