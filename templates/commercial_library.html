@@ -3,31 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Commercial Library</title>
+    <title>Faculty of Management Sciences</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
         <header class="app-header header-green">
-            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Hub</a>
-            <h1>Commercial Vault</h1>
+            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Main Portal</a>
+            <h1>Management Vault</h1>
         </header>
-        <main class="main-content">
-            <div class="book-item">
-                <h4><i class="fas fa-calculator"></i> Financial Accounting</h4>
-                <p>Ledger entries, balance sheets, and trial balances.</p>
-                <button class="download-button" onclick="alert('Downloading Accounting PDF...')">Download</button>
-            </div>
-            <div class="book-item">
-                <h4><i class="fas fa-coins"></i> Advanced Economics</h4>
-                <p>Micro/macro principles, market structures, and supply lines.</p>
-                <button class="download-button" onclick="alert('Downloading Economics PDF...')">Download</button>
-            </div>
-            <div class="book-item">
-                <h4><i class="fas fa-store"></i> Commerce Simplified</h4>
-                <p>Trade networks, banking sectors, and insurance frameworks.</p>
-                <button class="download-button" onclick="alert('Downloading Commerce PDF...')">Download</button>
+        <main class="main-content" style="padding-top: 20px;">
+            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #10b981;">
+                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-balance-scale" style="color: #10b981;"></i> ACC 211: Financial Accounting</h4>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Company financial statements, IAS regulations, and valuations.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #10b981; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
             </div>
         </main>
     </div>
