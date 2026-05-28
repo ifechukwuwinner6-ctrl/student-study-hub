@@ -12,13 +12,18 @@
     <div class="app-container">
         <header class="app-header">
             <h1>StudyHub Pro</h1>
-            <a href="/logout" style="color: white; font-size: 18px; text-decoration: none;" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <span class="badge blue">University Edition</span>
+                <a href="/logout" style="color: white; font-size: 18px; text-decoration: none;" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
         </header>
 
         <div class="welcome-section">
-            <h2>Welcome back!</h2>
-            <p style="color: #0284c7; font-weight: 600; font-size: 14px; word-break: break-all;"><i class="fas fa-user-circle"></i> {{ email }}</p>
-            <p>Select your Faculty or Department track to access your academic vault.</p>
+            <h2>Welcome back, Scholar!</h2>
+            <p style="color: #0284c7; font-weight: 600; font-size: 13px; margin-bottom: 5px; word-break: break-all;">
+                <i class="fas fa-user-circle"></i> {{ email }}
+            </p>
+            <p>Select your Faculty track below to access your academic vault.</p>
         </div>
 
         <main class="main-content">
