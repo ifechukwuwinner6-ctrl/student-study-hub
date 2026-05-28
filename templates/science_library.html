@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Faculty of Science Vault</title>
+    <title>Science Vault</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <div class="app-container">
-        <header class="app-header header-blue">
-            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Main Portal</a>
-            <h1>Science Vault</h1>
+        <header class="app-header">
+            <a href="/" style="color: #FACC15; text-decoration: none; font-size: 14px; font-weight: 700;"><i class="fas fa-arrow-left"></i> Back</a>
+            <h1 style="font-size: 18px;">Science Library</h1>
         </header>
-        <main class="main-content" style="padding-top: 20px;">
-            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #0284c7;">
-                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-calculator" style="color: #0284c7;"></i> MTH 101: Elementary Calculus</h4>
-                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Limits, differentiation, integration techniques, and applications.</p>
-                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #0284c7; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
+
+        <main class="main-content">
+            <div class="book-item">
+                <div class="book-title">MTH 101: Pure Calculus Module</div>
+                <div class="book-desc">Full comprehensive review of limits, derivatives, integration models, and university exercises.</div>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download="MTH101_Calculus.pdf" class="download-btn">
+                    <i class="fas fa-cloud-download-alt"></i> Download PDF Offline
+                </a>
             </div>
 
-            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #0284c7;">
-                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-bolt" style="color: #0284c7;"></i> PHY 201: Classical Mechanics</h4>
-                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Vector mechanics, kinetic theory, and laws of thermodynamics.</p>
-                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #0284c7; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
+            <div class="book-item">
+                <div class="book-title">PHY 201: Modern Mechanics Text</div>
+                <div class="book-desc">Vector systems, core kinetic theory, thermodynamic structures, and practice papers.</div>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download="PHY201_Mechanics.pdf" class="download-btn">
+                    <i class="fas fa-cloud-download-alt"></i> Download PDF Offline
+                </a>
             </div>
 
-            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #0284c7;">
-                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-vial" style="color: #0284c7;"></i> CHM 302: Organic Synthesis</h4>
-                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Advanced stereochemistry, reaction mechanisms, and lab analysis.</p>
-                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #0284c7; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
+            <div style="background: #5B21B6; padding: 14px; border-radius: 12px; margin-top: 25px; text-align: center; border: 1px solid #FACC15;">
+                <h4 style="color: #FACC15; margin-bottom: 4px;"><i class="fas fa-search"></i> Need More Books?</h4>
+                <p style="font-size: 12px; color: #FFFFFF; margin-bottom: 10px;">Access millions of tertiary textbooks instantly via open libraries:</p>
+                <a href="https://www.pdfdrive.com" target="_blank" style="display: block; background: #121214; color: #FACC15; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 13px;">Go to PDFDrive Open Shop</a>
             </div>
         </main>
     </div>
+
 </body>
 </html>
