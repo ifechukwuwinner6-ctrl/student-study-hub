@@ -1,37 +1,22 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# This is your Python data structure representing the departments
-DEPARTMENTS = {
-    "science": {
-        "name": "Science Department",
-        "icon": "🔬",
-        "books_count": 14,
-        "description": "Access Physics, Chemistry, Biology texts, and custom engineering blueprints."
-    },
-    "art": {
-        "name": "Art Department",
-        "icon": "🎨",
-        "books_count": 12,
-        "description": "Access Literature, History, Government readings, and creative writing archives."
-    },
-    "commercial": {
-        "name": "Commercial Department",
-        "icon": "📊",
-        "books_count": 15,
-        "description": "Access Financial Accounting, Commerce, Economics manuals, and business models."
-    }
-}
-
 @app.route('/')
 def home():
-    # Python sends this data dynamically straight into your HTML layout
-    return render_template('index.html', departments=DEPARTMENTS)
+    return render_template('index.html')
 
-@app.route('/api/quiz/<dept_id>')
-def get_quiz(dept_id):
-    return jsonify({"status": "success", "message": f"Quiz room for {dept_id} coming soon!"})
+@app.route('/library/science')
+def science_library():
+    return render_template('science_library.html')
+
+@app.route('/library/art')
+def art_library():
+    return render_template('art_library.html')
+
+@app.route('/library/commercial')
+def commercial_library():
+    return render_template('commercial_library.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True)
