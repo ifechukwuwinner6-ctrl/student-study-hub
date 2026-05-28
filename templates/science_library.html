@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Science Library</title>
+    <title>Faculty of Science Vault</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
         <header class="app-header header-blue">
-            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Hub</a>
+            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Main Portal</a>
             <h1>Science Vault</h1>
         </header>
-        <main class="main-content">
-            <div class="book-item">
-                <h4><i class="fas fa-atom"></i> Senior Secondary Physics</h4>
-                <p>Mechanics, waves, and electricity breakdown.</p>
-                <button class="download-button" onclick="alert('Downloading Physics PDF...')">Download</button>
+        <main class="main-content" style="padding-top: 20px;">
+            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #0284c7;">
+                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-calculator" style="color: #0284c7;"></i> MTH 101: Elementary Calculus</h4>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Limits, differentiation, integration techniques, and applications.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #0284c7; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
             </div>
-            <div class="book-item">
-                <h4><i class="fas fa-flask"></i> Modern Chemistry Vol 1</h4>
-                <p>Organic chains, equations, and lab practical tools.</p>
-                <button class="download-button" onclick="alert('Downloading Chemistry PDF...')">Download</button>
+
+            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #0284c7;">
+                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-bolt" style="color: #0284c7;"></i> PHY 201: Classical Mechanics</h4>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Vector mechanics, kinetic theory, and laws of thermodynamics.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #0284c7; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
             </div>
-            <div class="book-item">
-                <h4><i class="fas fa-dna"></i> Essential Biology</h4>
-                <p>Genetics, human anatomy systems, and plant tissues.</p>
-                <button class="download-button" onclick="alert('Downloading Biology PDF...')">Download</button>
+
+            <div class="book-item" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #0284c7;">
+                <h4 style="color: #1e293b; margin-bottom: 6px;"><i class="fas fa-vial" style="color: #0284c7;"></i> CHM 302: Organic Synthesis</h4>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">Advanced stereochemistry, reaction mechanisms, and lab analysis.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-button" style="display: inline-block; background: #0284c7; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; text-align: center;">Open Study Module</a>
             </div>
         </main>
     </div>
