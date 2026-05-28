@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>StudyHub Pro | Faculty Portal</title>
+    <title>StudyHub Pro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,46 +12,32 @@
     <div class="app-container">
         <header class="app-header">
             <h1>StudyHub Pro</h1>
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <span class="badge blue">University Edition</span>
-                <a href="/logout" style="color: white; font-size: 18px; text-decoration: none;" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
-            </div>
+            <a href="/logout" style="color: #FACC15; font-size: 18px; text-decoration: none;"><i class="fas fa-sign-out-alt"></i></a>
         </header>
 
         <div class="welcome-section">
             <h2>Welcome back, Scholar!</h2>
-            <p style="color: #0284c7; font-weight: 600; font-size: 13px; margin-bottom: 5px; word-break: break-all;">
-                <i class="fas fa-user-circle"></i> {{ email }}
-            </p>
-            <p>Select your Faculty track below to access your academic vault.</p>
+            <p style="color: #FACC15; font-weight: 600; margin-bottom: 4px;"><i class="fas fa-user-circle"></i> {{ email }}</p>
+            <p>Select a track to download academic modules directly to your phone for offline storage.</p>
         </div>
 
         <main class="main-content">
-            <div class="dept-card science border-blue">
-                <div class="card-header">
-                    <h3><i class="fas fa-atom" style="color: #0284c7;"></i> Faculty of Science</h3>
-                </div>
-                <p>Access Advanced Physics, Organic Chemistry, Calculus, and Engineering blueprints.</p>
-                <div class="tag"><i class="fas fa-graduation-cap"></i> Level 100 - 400</div>
-                <a href="/library/science" class="action-btn bg-blue">Enter Faculty Vault</a>
+            <div class="dept-card">
+                <h3><i class="fas fa-atom"></i> Faculty of Science</h3>
+                <p>Download full textbooks and curriculum modules for Physics, Chemistry, and Advanced Calculus.</p>
+                <a href="/library/science" class="action-btn">Open Science Vault</a>
             </div>
 
-            <div class="dept-card art border-pink">
-                <div class="card-header">
-                    <h3><i class="fas fa-gavel" style="color: #ec4899;"></i> Faculty of Arts</h3>
-                </div>
-                <p>Access Constitutional Law, Political Philosophy, Literary Theory, and History archives.</p>
-                <div class="tag"><i class="fas fa-graduation-cap"></i> Level 100 - 400</div>
-                <a href="/library/art" class="action-btn bg-pink">Enter Faculty Vault</a>
+            <div class="dept-card">
+                <h3><i class="fas fa-gavel"></i> Faculty of Arts</h3>
+                <p>Download archival literature readings, Constitutional Law reviews, and history modules.</p>
+                <a href="/library/art" class="action-btn">Open Arts Vault</a>
             </div>
 
-            <div class="dept-card commercial border-green">
-                <div class="card-header">
-                    <h3><i class="fas fa-chart-bar" style="color: #10b981;"></i> Management Sciences</h3>
-                </div>
-                <p>Access Corporate Finance, Econometrics, Advanced Accounting, and Data Analytics.</p>
-                <div class="tag"><i class="fas fa-graduation-cap"></i> Level 100 - 400</div>
-                <a href="/library/commercial" class="action-btn bg-green">Enter Faculty Vault</a>
+            <div class="dept-card">
+                <h3><i class="fas fa-chart-bar"></i> Management Sciences</h3>
+                <p>Download specialized corporate finance guides, accounting spreadsheets, and economic textbooks.</p>
+                <a href="/library/commercial" class="action-btn">Open Management Vault</a>
             </div>
         </main>
     </div>
