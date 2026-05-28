@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Student Study Hub Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="mobile-top-bar">
+            <h2>StudyHub Pro</h2>
+            <span class="badge">Python Powered</span>
+        </header>
+
+        <main class="main-content">
+            <div class="welcome-header">
+                <h1>Welcome back, Scholar!</h1>
+                <p>Select your department track below to access your vault.</p>
+            </div>
+
+            <section class="departments-grid">
+                {% for id, dept in departments.items() %}
+                <div class="dept-card {{ id }}-card">
+                    <div class="card-header">
+                        <span class="icon">{{ dept.icon }}</span>
+                        <h3>{{ dept.name }}</h3>
+                    </div>
+                    <p class="desc">{{ dept.description }}</p>
+                    <div class="meta-info">📚 {{ dept.books_count }} Active Books</div>
+                    <div class="action-hub">
+                        <button class="btn btn-primary" onclick="alert('Opening {{ dept.name }} Library...')">Enter Library</button>
+                        <button class="room-link-btn" onclick="alert('Loading {{ dept.name }} Quiz...')">🎯 Practice Quiz Room</button>
+                        <button class="room-link-btn" onclick="alert('Connecting to {{ dept.name }} Chat...')">💬 {{ dept.name }} Chat</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
