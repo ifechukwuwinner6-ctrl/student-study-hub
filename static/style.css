@@ -1,183 +1,141 @@
-/* Core Viewport Scaling Protections */
-html, body {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    position: relative;
-    touch-action: pan-y; /* Allows scrolling down, completely blocks pinch-zooming */
-    -webkit-text-size-adjust: 100%;
-    background-color: #f8fafc;
-    color: #1e293b;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     -webkit-tap-highlight-color: transparent;
 }
 
-.app-container {
+body {
+    background-color: #121214; /* Deep Premium Black */
+    color: #FFFFFF; /* Crisp White Text */
+    padding: 10px;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
+    justify-content: center;
 }
 
-/* Fixed Header Navbar */
-.mobile-top-bar {
+.app-container {
     width: 100%;
-    background-color: #0f172a;
-    color: #fff;
-    padding: 16px 20px;
+    max-width: 480px;
+    background: #1A1A1E; /* Sleek Dark Gray Card Area */
+    min-height: 92vh;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    border: 2px solid #5B21B6; /* Deep Purple Border Frame */
+}
+
+.app-header {
+    background: #5B21B6; /* Royalty Purple Header */
+    padding: 16px;
+    border-radius: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-bottom: 4px solid #FACC15; /* Vibrant Yellow Accent Trim */
 }
 
-.mobile-top-bar h2 {
+.app-header h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #FACC15; /* Electric Yellow Heading */
+}
+
+.welcome-section {
+    background: #27272A;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border-left: 5px solid #FACC15; /* Yellow Accent Indicator */
+}
+
+.welcome-section h2 {
+    color: #FFFFFF;
     font-size: 18px;
-    font-weight: 700;
+    margin-bottom: 4px;
 }
 
-.badge {
-    background-color: #38bdf8;
-    color: #0f172a;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
+.welcome-section p {
+    color: #A1A1AA;
+    font-size: 13px;
 }
 
-/* Content Area */
-.main-content {
-    flex: 1;
-    width: 100%;
-    padding: 20px 16px;
-}
-
-.welcome-header {
-    margin-bottom: 24px;
-}
-
-.welcome-header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 6px;
-}
-
-.welcome-header p {
-    color: #64748b;
-    font-size: 14px;
-}
-
-/* Layout Grid */
-.departments-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-}
-
-/* Department App Cards */
 .dept-card {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    background: #27272A; /* Slate Black Card */
+    padding: 18px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #3F3F46;
+    transition: transform 0.2s;
 }
 
-.card-header {
+.dept-card h3 {
+    color: #FACC15; /* Electric Yellow Titles */
+    font-size: 16px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 12px;
 }
 
-.card-header .icon {
-    font-size: 24px;
-}
-
-.card-header h3 {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.desc {
-    color: #64748b;
+.dept-card p {
+    color: #D4D4D8;
     font-size: 13px;
     line-height: 1.5;
     margin-bottom: 12px;
 }
 
-.meta-info {
-    font-size: 12px;
-    font-weight: 600;
-    color: #475569;
-    background-color: #f1f5f9;
-    padding: 4px 8px;
-    border-radius: 6px;
-    align-self: flex-start;
-    margin-bottom: 18px;
-}
-
-/* Action Center */
-.action-hub {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 16px;
-}
-
-.btn-primary {
-    background-color: #0f172a;
-    color: #fff;
-    border: none;
+.action-btn {
+    display: block;
+    width: 100%;
+    background: #5B21B6; /* Purple Interactive Buttons */
+    color: #FACC15; /* Yellow Text font */
+    text-align: center;
     padding: 12px;
     border-radius: 8px;
-    font-weight: 600;
+    text-decoration: none;
+    font-weight: 700;
     font-size: 14px;
-    cursor: pointer;
+    border: 1px solid #FACC15;
 }
 
-.room-link-btn {
-    background: none;
-    border: none;
+.action-btn:active {
+    background: #FACC15;
+    color: #121214;
+}
+
+/* Book Item Styles */
+.book-item {
+    background: #27272A;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    border: 1px solid #5B21B6;
+}
+
+.book-title {
+    color: #FACC15;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.book-desc {
+    color: #D4D4D8;
     font-size: 13px;
-    font-weight: 500;
-    color: #2563eb;
-    padding: 6px 0;
+    margin-bottom: 12px;
+}
+
+.download-btn {
     display: inline-flex;
     align-items: center;
-    cursor: pointer;
-    text-align: left;
+    gap: 8px;
+    background: #FACC15; /* Yellow Button for instant actions */
+    color: #121214; /* Black Text */
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
 }
-
-/* Accent Borders */
-.science-card { border-top: 4px solid #06b6d4; }
-.art-card { border-top: 4px solid #ec4899; }
-.commercial-card { border-top: 4px solid #f59e0b; }
-
-/* Mobile Tap Animations */
-.btn-primary:active {
-    background-color: #38bdf8 !important;
-    transform: scale(0.97);
-}
-
-.room-link-btn:active {
-    color: #0284c7;
-}
- 
