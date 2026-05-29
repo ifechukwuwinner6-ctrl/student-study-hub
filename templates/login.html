@@ -3,26 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>University Gateway</title>
+    <title>University Gateway | StudyHub Pro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .login-card {
+            background: #1A1A1E;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid #5B21B6;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .form-label {
+            display: block;
+            color: #FACC15;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            background: #121214;
+            border: 1px solid #3F3F46;
+            color: #FFFFFF;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-input:focus {
+            border-color: #FACC15;
+            outline: none;
+        }
+        .alert-banner {
+            padding: 14px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+        }
+    </style>
 </head>
-<body style="background: #f0f4f8;">
+<body style="background-color: #121214; padding-top: 30px;">
 
-    <div class="app-container" style="padding-top: 40px;">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <div style="width: 70px; height: 70px; background: #0284c7; color: white; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 28px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(2,132,199,0.3);">
+    <div class="app-container" style="min-height: auto;">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <div style="width: 70px; height: 70px; background: #5B21B6; color: #FACC15; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 28px; margin-bottom: 12px; border: 2px solid #FACC15; box-shadow: 0 4px 15px rgba(91,33,182,0.4);">
                 <i class="fas fa-university"></i>
             </div>
-            <h2 style="color: #1e293b; font-weight: 700;">StudyHub Pro</h2>
-            <p style="color: #64748b; font-size: 14px;">Secure Institutional Authentication</p>
+            <h2 style="color: #FACC15; font-weight: 800; font-size: 24px;">StudyHub Pro</h2>
+            <p style="color: #A1A1AA; font-size: 13px;">Secure Institutional Authentication</p>
         </div>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
             {% for category, message in messages %}
-              <div style="padding: 14px; margin-bottom: 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-align: center; 
-                {% if category == 'error' %} background: #fee2e2; color: #ef4444; border: 1px solid #fca5a5; {% else %} background: #dcfce7; color: #15803d; border: 1px solid #86efac; {% endif %}">
+              <div class="alert-banner" style="{% if category == 'error' %} background: #451a03; color: #f87171; border: 1px solid #ef4444; {% else %} background: #064e3b; color: #34d399; border: 1px solid #10b981; {% endif %}">
                 {{ message }}
               </div>
             {% endfor %}
@@ -30,59 +70,67 @@
         {% endwith %}
 
         {% if view == 'login' %}
-        <div style="background: white; padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+        <div class="login-card">
             <form action="/login" method="POST">
-                <label style="display:block; color:#475569; font-size:12px; font-weight:600; margin-bottom:6px; text-transform:uppercase;">University Email</label>
-                <input type="email" name="email" required placeholder="student@edu.ng" style="width:100%; padding:12px; margin-bottom:16px; border:1px solid #cbd5e1; border-radius:8px; font-size:16px; box-sizing:border-box;">
+                <label class="form-label">University Email</label>
+                <input type="email" name="email" required placeholder="student@uni.edu.ng" class="form-input">
                 
-                <label style="display:block; color:#475569; font-size:12px; font-weight:600; margin-bottom:6px; text-transform:uppercase;">Password</label>
-                <input type="password" name="password" required placeholder="••••••••" style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; font-size:16px; box-sizing:border-box;">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" required placeholder="••••••••" class="form-input">
                 
-                <button type="submit" style="width:100%; background:#0284c7; color:white; padding:14px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">Sign In</button>
+                <button type="submit" class="action-btn" style="width:100%; border:none; cursor:pointer; padding:14px; font-size:16px;">Sign In</button>
             </form>
             <div style="text-align:center; margin-top:20px; font-size:14px;">
-                <a href="/recover" style="color:#0284c7; text-decoration:none; display:block; margin-bottom:8px;">Lost phone or password?</a>
-                <span style="color:#64748b;">New user?</span> <a href="/signup" style="color:#0284c7; text-decoration:none; font-weight:600;">Create Account</a>
+                <a href="/recover" style="color:#A1A1AA; text-decoration:none; display:block; margin-bottom:10px;">Lost device or password?</a>
+                <span style="color:#FFFFFF;">New student?</span> <a href="/signup" style="color:#FACC15; text-decoration:none; font-weight:700;">Create Account</a>
             </div>
         </div>
 
         {% elif view == 'signup' %}
-        <div style="background: white; padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+        <div class="login-card">
             <form action="/signup" method="POST">
-                <label style="display:block; color:#475569; font-size:12px; font-weight:600; margin-bottom:6px; text-transform:uppercase;">Institutional Email</label>
-                <input type="email" name="email" required placeholder="matric-number@university.edu.ng" style="width:100%; padding:12px; margin-bottom:16px; border:1px solid #cbd5e1; border-radius:8px; font-size:16px; box-sizing:border-box;">
+                <label class="form-label">Institutional Email</label>
+                <input type="email" name="email" required placeholder="matric-no@uni.edu.ng" class="form-input">
                 
-                <label style="display:block; color:#475569; font-size:12px; font-weight:600; margin-bottom:6px; text-transform:uppercase;">Create Password</label>
-                <input type="password" name="password" required placeholder="Minimum 6 characters" style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; font-size:16px; box-sizing:border-box;">
+                <label class="form-label">Select Academic Level</label>
+                <select name="level" class="form-input" style="cursor: pointer; height: 48px;">
+                    <option value="100L">100 Level Freshers Lounge</option>
+                    <option value="200L">200 Level Undergraduate</option>
+                    <option value="300L">300 Level Undergraduate</option>
+                    <option value="400L">400 Level Finalist Core</option>
+                </select>
+
+                <label class="form-label">Create Password</label>
+                <input type="password" name="password" required placeholder="Minimum 6 characters" class="form-input">
                 
-                <button type="submit" style="width:100%; background:#10b981; color:white; padding:14px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">Register Device</button>
+                <button type="submit" class="action-btn" style="width:100%; background:#10b981; color:#FFFFFF; border:1px solid #34d399; cursor:pointer; padding:14px; font-size:16px;">Register Matrix</button>
             </form>
             <div style="text-align:center; margin-top:20px; font-size:14px;">
-                <span style="color:#64748b;">Already registered?</span> <a href="/login" style="color:#0284c7; text-decoration:none; font-weight:600;">Sign In Instead</a>
+                <span style="color:#FFFFFF;">Already registered?</span> <a href="/login" style="color:#FACC15; text-decoration:none; font-weight:700;">Sign In Instead</a>
             </div>
         </div>
 
         {% elif view == 'recover' %}
-        <div style="background: white; padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-            <p style="color:#64748b; font-size:14px; line-height:1.5; margin-bottom:16px; text-align:center;">Enter your registered university email. We will process and issue a secure verification code to reset access link.</p>
+        <div class="login-card">
+            <p style="color:#A1A1AA; font-size:13px; line-height:1.5; margin-bottom:16px; text-align:center;">Provide your registered university email parameter. The backend ledger will process an verification code reset bypass.</p>
             <form action="/recover" method="POST">
-                <label style="display:block; color:#475569; font-size:12px; font-weight:600; margin-bottom:6px; text-transform:uppercase;">Registered Email</label>
-                <input type="email" name="email" required placeholder="student@edu.ng" style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; font-size:16px; box-sizing:border-box;">
+                <label class="form-label">Registered Email</label>
+                <input type="email" name="email" required placeholder="student@uni.edu.ng" class="form-input">
                 
-                <button type="submit" style="width:100%; background:#f59e0b; color:white; padding:14px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;">Request OTP Verification</button>
+                <button type="submit" class="action-btn" style="width:100%; background:#d97706; color:#FFFFFF; border:1px solid #f59e0b; cursor:pointer; padding:14px; font-size:16px;">Request Device Bypass Code</button>
             </form>
             <div style="text-align:center; margin-top:20px; font-size:14px;">
-                <a href="/login" style="color:#64748b; text-decoration:none;"><i class="fas fa-arrow-left"></i> Back to Gateway</a>
+                <a href="/login" style="color:#FACC15; text-decoration:none;"><i class="fas fa-arrow-left"></i> Back to Gateway</a>
             </div>
         </div>
 
         {% elif view == 'verify' %}
-        <div style="background: white; padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); text-align:center;">
-            <div style="font-size:36px; font-weight:700; letter-spacing:4px; color:#1e293b; background:#f1f5f9; padding:14px; border-radius:8px; margin-bottom:16px;">
+        <div class="login-card" style="text-align:center;">
+            <div style="font-size:32px; font-weight:800; letter-spacing:5px; color:#FACC15; background:#121214; padding:14px; border-radius:8px; margin-bottom:16px; border: 1px dashed #5B21B6;">
                 {{ code }}
             </div>
-            <p style="color:#64748b; font-size:14px; margin-bottom:20px;">Use the verification code displayed above to complete device restoration for <b>{{ email }}</b>.</p>
-            <a href="/login" style="display:block; width:100%; background:#0284c7; color:white; padding:14px; border-radius:8px; font-size:16px; font-weight:600; text-decoration:none; box-sizing:border-box;">Proceed to Login</a>
+            <p style="color:#A1A1AA; font-size:13px; margin-bottom:20px;">Secure device link authentication code generated for: <b style="color:white;">{{ email }}</b>.</p>
+            <a href="/login" class="action-btn" style="display:block; text-decoration:none; font-size:15px; padding:12px;">Proceed to Gateway Sign In</a>
         </div>
         {% endif %}
 
