@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Secure Result Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .input-group { margin-bottom: 15px; text-align: left; }
+        .input-group label { display: block; color: #FACC15; font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+        .input-field { width: 100%; padding: 12px; background: #121214; border: 1px solid #5B21B6; color: white; border-radius: 8px; font-size: 14px; }
+        .input-field:focus { border-color: #FACC15; outline: none; }
+        .result-table { width: 100%; border-collapse: collapse; margin-top: 15px; background: #121214; border-radius: 8px; overflow: hidden; }
+        .result-table th { background: #5B21B6; color: #FACC15; padding: 10px; font-size: 13px; text-align: left; }
+        .result-table td { padding: 10px; border-bottom: 1px solid #27272A; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <a href="/" style="color: #FACC15; text-decoration: none; font-size: 14px; font-weight: bold;"><i class="fas fa-arrow-left"></i> Home</a>
+            <h1 style="font-size: 18px;">Result Desk</h1>
+        </header>
+
+        <div class="welcome-section" style="border-left: 5px solid #5B21B6;">
+            <h2>Secure Academic Clearance</h2>
+            <p>Provide your batch parameters below to verify grades compiled inside the server records.</p>
+        </div>
+
+        <form method="POST" class="dept-card">
+            <div class="input-group">
+                <label>Select Level Verification</label>
+                <select name="level" class="input-field">
+                    <option value="100L">100L Student Matrix</option>
+                    <option value="200L">200L Student Matrix</option>
+                    <option value="300L">300L Student Matrix</option>
+                    <option value="400L">400L Student Matrix</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Batch Verification Number / Code</label>
+                <input type="text" name="batch_no" placeholder="e.g. B2026" class="input-field" required>
+            </div>
+
+            <button type="submit" class="action-btn" style="cursor: pointer;">Fetch Secure Transcript</button>
+        </form>
+
+        {% if searched %}
+            <div class="dept-card">
+                <h3 style="color: #FFFFFF;"><i class="fas fa-poll-h"></i> Statement Matrix Results</h3>
+                {% if results %}
+                    <table class="result-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in results %}
+                            <tr>
+                                <td style="font-weight: bold; color: #FACC15;">{{ row[0] }}</td>
+                                <td>{{ row[1] }}%</td>
+                                <td style="color: #5B21B6; font-weight: bold; background: rgba(250,204,21,0.1); text-align: center;">{{ row[2] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else: %}
+                    <p style="color: #EF4444; font-size: 13px; margin-top: 10px;"><i class="fas fa-exclamation-triangle"></i> No secure matching files found for this query parameter. Verify your batch code entry.</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
